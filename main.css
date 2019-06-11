@@ -1,3 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700|Rubik:400,400i,700&display=swap&subset=latin-ext');
+/*=========================================================
+
+Colors
+
+=========================================================*/
+
+html {
+	--color-light-blue:	#62d8ff;
+	--color-blue: #11A6CC;
+	--color-dark-blue: #00779b;
+	--color-light-purple: #56346b;
+	--color-purple: #2B0C40;
+	--color-dark-purple: #0a001b;
+	--color-light-pink: #f56ab0;
+	--color-pink: #BF3681;
+	--color-dark-pink: #8b0055;
+	--color-light-yellow: #ffef98;
+	--color-yellow: #FABD68;
+	--color-dark-yellow: #c48d3a;
+	--color-dark-text: #303030;
+	--color-mid-text: #4E4E4E;
+	--color-light-text: #D0D0D0;
+}
+
 
 /*=========================================================
 
@@ -7,11 +32,23 @@ Typography
 
 
 html {
-	color: #303030;
+	--font-primary: Rubik, Helvetica, sans-serif;
+	--font-secondary: Raleway, Helvetica, sans-serif;
+
+	font-family: var(--font-primary);
+	color: var(--color-dark-text);
+	line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+
+	font-family: var(--font-secondary);
+	color: var(--color-dark-text);
 }
 
 a {
-	color: #62d8ff;
+	border-bottom: 1px dotted;
+	text-decoration: none;
 }
 
 /*=========================================================
@@ -21,9 +58,13 @@ Header Component
 =========================================================*/
 
 header {
-	background-color: #56346b;	
+	background-color: var(--color-light-purple);	
 	padding: 1rem;
-	color: #D0D0D0;
+	color: var(--color-light-text);
+}
+
+header a {
+	color: var(--color-light-yellow);
 }
 
 /*=========================================================
@@ -33,8 +74,33 @@ Footer Component
 =========================================================*/
 
 footer {
-	background-color: #0a001b;
+	background-color: var(--color-dark-purple);
 	padding: 2rem;
-	color: #D0D0D0;
+	color: var(--color-light-text);
 }
 
+/*=========================================================
+
+Page Layout
+
+=========================================================*/
+
+main {
+	max-width: 36rem;
+	margin: 4rem auto;
+}
+
+body {
+	margin: 0;
+}
+
+
+/*=========================================================
+
+Examples
+
+=========================================================*/
+
+.examples-secondary-font {	
+	font-family: var(--font-secondary);
+}
