@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,700|Rubik:400,400i,700&display=swap&subset=latin-ext');
 /*=========================================================
 
 Colors
@@ -30,8 +29,19 @@ Typography
 
 =========================================================*/
 
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700|Rubik:400,400i,700&display=swap&subset=latin-ext');
+
 
 html {
+	--ratio: 1.55;
+
+	--size-xxlarge: calc( var(--size-xlarge) * var(--ratio));
+	--size-xlarge: calc( var(--size-large) * var(--ratio) );
+	--size-large: calc( var(--size-medium) * var(--ratio) );
+	--size-medium: calc( 1rem * var(--ratio));
+	--size-small: 1rem;
+	--size-xsmall: calc( 1rem / 1.2);
+
 	--font-primary: Rubik, Helvetica, sans-serif;
 	--font-secondary: Raleway, Helvetica, sans-serif;
 
@@ -44,7 +54,41 @@ h1, h2, h3, h4, h5, h6 {
 
 	font-family: var(--font-secondary);
 	color: var(--color-dark-text);
+	line-height: 1.1;
+	margin-top: 3.5rem;
+	font-weight: bold;
+	text-transform: lowercase;
 }
+
+h1 {
+	font-size: var(--size-xxlarge);
+}
+
+h2 {
+	font-size: var(--size-xlarge);
+	border-top: 3px solid var(--color-light-purple);
+	padding-top: 3rem;
+}
+
+h3 {
+	font-size: var(--size-large);
+}
+
+h4 {
+	font-size: var(--size-medium);
+}
+
+h5 {
+	font-size: var(--size-small);
+}
+
+h6 {
+	font-size: var(--size-xsmall);
+}
+
+h1:first-letter, h2:first-letter, h3:first-letter, h4:first-letter, h5:first-letter, h6:first-letter {
+	color: var(--color-blue);
+} 
 
 a {
 	border-bottom: 1px dotted;
@@ -94,6 +138,10 @@ body {
 	margin: 0;
 }
 
+.heading-two-exception {
+	border-top: none;
+	padding-top: 0;
+}
 
 /*=========================================================
 
