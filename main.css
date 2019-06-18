@@ -29,7 +29,7 @@ Typography
 
 =========================================================*/
 
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,700|Rubik:400,400i,700&display=swap&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700|Rubik:400,400i,700,900&display=swap&subset=latin-ext');
 
 
 html {
@@ -41,22 +41,25 @@ html {
 	--size-medium: calc( 1rem * var(--ratio));
 	--size-small: 1rem;
 	--size-xsmall: calc( 1rem / 1.2);
+	--size-feature: calc( 1rem * 1.1);
+	--size-feature-bold: calc( 1rem * 1.3);
+	--size-tertiary: calc( 1rem / 1.1);
 
 	--font-primary: Rubik, Helvetica, sans-serif;
 	--font-secondary: Raleway, Helvetica, sans-serif;
 
-	font-family: var(--font-primary);
 	color: var(--color-dark-text);
+	font-family: var(--font-primary);
 	line-height: 1.4;
 }
 
 h1, h2, h3, h4, h5, h6 {
 
-	font-family: var(--font-secondary);
 	color: var(--color-dark-text);
+	font-family: var(--font-secondary);
+	font-weight: bold;
 	line-height: 1.1;
 	margin-top: 3.5rem;
-	font-weight: bold;
 	text-transform: lowercase;
 }
 
@@ -66,8 +69,6 @@ h1 {
 
 h2 {
 	font-size: var(--size-xlarge);
-	border-top: 3px solid var(--color-light-purple);
-	padding-top: 3rem;
 }
 
 h3 {
@@ -91,8 +92,90 @@ h1:first-letter, h2:first-letter, h3:first-letter, h4:first-letter, h5:first-let
 } 
 
 a {
-	border-bottom: 1px dotted;
+	border-bottom: 1px dotted var(--color-blue);
 	text-decoration: none;
+	color: var(--color-blue);
+}
+
+.standout-text {
+	font-size: var(--size-feature)
+	font-weight: bold;
+}
+
+.standout-text strong {
+	font-size: var(--size-feature-bold);
+}
+
+.tertiary-text {
+	font-size: var(--size-tertiary);
+	font-style: italic;
+}
+
+.tertiary-text em {
+	font-style: normal;
+}
+
+ul {
+	list-style: square;
+	font-size: var(--size-feature-bold);
+	color: var(--color-purple);
+}
+
+ul ul {
+	color: var(--color-dark-blue);
+	font-size: var(--size-feature);
+	list-style: disc;
+}
+
+ol {
+	color: var(--color-purple);
+	font-size: var(--size-feature-bold);
+	list-style: lower-alpha;
+}
+
+ol ol {
+	color: var(--color-dark-blue);
+	font-size: var(--size-feature);
+}
+
+blockquote {
+	color: var(--color-purple);
+	font-size: var(--size-medium);
+	font-weight: bold;
+	text-align: center;
+}
+
+blockquote cite {
+	font-size: var(--size-tertiary);
+	font-style: italic;
+	text-align: right;
+}
+
+blockquote:before{
+	content: '❞';
+	font-size: var(--size-xlarge);
+	text-align: center;
+	display: block;	
+
+}
+
+blockquote:after {
+	content: '❝';
+	font-size: var(--size-xlarge);
+	text-align: center;
+	display: block;
+
+}
+
+/*=========================================================
+
+Section Primary Component
+
+=========================================================*/
+
+.section-primary {
+	border-top: 2px solid var(--color-light-purple);
+	margin-top: 2rem;
 }
 
 /*=========================================================
@@ -103,8 +186,8 @@ Header Component
 
 header {
 	background-color: var(--color-light-purple);	
-	padding: 1rem;
 	color: var(--color-light-text);
+	padding: 1rem;
 }
 
 header a {
@@ -119,8 +202,8 @@ Footer Component
 
 footer {
 	background-color: var(--color-dark-purple);
-	padding: 2rem;
 	color: var(--color-light-text);
+	padding: 2rem;
 }
 
 /*=========================================================
@@ -130,18 +213,15 @@ Page Layout
 =========================================================*/
 
 main {
-	max-width: 36rem;
 	margin: 4rem auto;
+	max-width: 36rem;
 }
 
 body {
 	margin: 0;
 }
 
-.heading-two-exception {
-	border-top: none;
-	padding-top: 0;
-}
+
 
 /*=========================================================
 
