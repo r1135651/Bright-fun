@@ -33,7 +33,7 @@ Typography
 
 
 html {
-	--ratio: 1.55;
+	--ratio: 1.4;
 
 	--size-xxlarge: calc( var(--size-xlarge) * var(--ratio));
 	--size-xlarge: calc( var(--size-large) * var(--ratio) );
@@ -167,6 +167,14 @@ blockquote:after {
 
 }
 
+@media (min-width: 600px) {
+
+	html {
+		--ratio: 1.55;
+	}
+
+}
+
 /*=========================================================
 
 Section Primary Component
@@ -191,9 +199,36 @@ header {
 }
 
 header a {
+	border: none;
 	color: var(--color-light-yellow);
 }
 
+@media (min-width: 600px){
+
+	header ul {
+		padding: 0;
+	}
+
+	header li {
+		display: inline;
+		margin-right: 1rem;
+	}
+}
+
+.logo {
+	color: var(--color-light-text);
+	display: block;
+    font-family: var(--font-secondary);
+	font-size: var(--size-xlarge);
+    font-weight: bold;
+    line-height: 1.1;
+    margin-top: 3.5rem;
+    text-transform: lowercase;
+}
+
+.logo::first-letter {
+	color: var(--color-blue);
+}
 /*=========================================================
 
 Footer Component
@@ -213,15 +248,29 @@ Page Layout
 =========================================================*/
 
 main {
-	margin: 4rem auto;
-	max-width: 36rem;
+	margin: 2rem 1rem;
+	
 }
 
 body {
 	margin: 0;
 }
 
+@media (min-width: 608px) {
 
+	main {
+		max-width: 36rem;
+
+	}
+}
+
+@media (min-width: 680px) {
+
+	main {
+		margin: auto;
+		max-width: 40rem;
+	}
+}
 
 /*=========================================================
 
