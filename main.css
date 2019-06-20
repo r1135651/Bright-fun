@@ -97,6 +97,11 @@ a {
 	color: var(--color-blue);
 }
 
+
+a:visited {
+	color: var(--color-pink);
+}
+
 .standout-text {
 	font-size: var(--size-feature)
 	font-weight: bold;
@@ -116,9 +121,9 @@ a {
 }
 
 ul {
-	list-style: square;
 	font-size: var(--size-feature-bold);
 	color: var(--color-purple);
+	list-style: disc;
 }
 
 ul ul {
@@ -200,7 +205,15 @@ header {
 
 header a {
 	border: none;
-	color: var(--color-light-yellow);
+	color: var(--color-light-blue);
+}
+
+header a:visited {
+	color: var(--color-light-blue);
+}
+
+header .logo:visited {
+	color: white;
 }
 
 @media (min-width: 600px){
@@ -216,7 +229,7 @@ header a {
 }
 
 .logo {
-	color: var(--color-light-text);
+	color: white;
 	display: block;
     font-family: var(--font-secondary);
 	font-size: var(--size-xlarge);
@@ -227,7 +240,7 @@ header a {
 }
 
 .logo::first-letter {
-	color: var(--color-blue);
+	color: var(--color-light-blue);
 }
 /*=========================================================
 
@@ -270,6 +283,87 @@ body {
 		margin: auto;
 		max-width: 40rem;
 	}
+}
+
+/*=========================================================
+
+Link Buttons 
+
+=========================================================*/
+
+.link-button {
+	background-color: var(--color-light-purple);
+	border-radius: .5em;
+	box-shadow: 4px 4px var(--color-blue);
+	display: inline-block;
+	margin: 1rem;
+	padding: .75rem;
+	text-transform: lowercase;
+	transition: all .5s ease;
+}
+
+.link-button-primary {
+	color: white;
+	font-size: var(--size-feature-bold);
+	padding: 1.5rem;
+}
+
+.link-button-secondary {
+	color: var(--color-light-text);
+}
+
+.link-button-tertiary {
+	background-color: transparent;
+	border: 2px solid;
+	border-color: var(--color-blue);
+	box-shadow: 4px 4px var(--color-light-purple);
+	color: var(--color-light-purple);
+}
+
+.link-button:hover, .link-button:focus {
+	background-color: var(--color-blue);
+	color: white;
+	outline-color: var(--color-blue);
+}
+
+.link-button-primary:hover, .link-button-primary:focus {
+	box-shadow: 4px 4px var(--color-light-purple);
+	color: var(--color-light-purple);
+}
+
+.link-button-secondary:hover, .link-button-secondary:focus {
+	box-shadow: 4px 4px var(--color-light-purple);
+}
+
+.link-button:active {
+	box-shadow: 4px 4px var(--color-mid-text) inset;
+	border: none;
+	transform: scale(.9);
+	transition: all .5s ease;
+}
+
+/*=========================================================
+
+Accordions
+
+=========================================================*/
+
+details {
+	border-bottom: 1px solid var(--color-light-blue);
+}
+
+summary {
+	font-size: var(--size-medium);
+	margin: 1rem 1rem;
+	padding: 1rem;
+}
+
+details div {
+	padding: 1rem;
+}
+
+details[open] {
+	border-color: var(--color-light-yellow);
 }
 
 /*=========================================================
