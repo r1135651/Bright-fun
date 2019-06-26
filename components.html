@@ -29,11 +29,11 @@
 
 		<h1>Components</h1>
 
-		<h2>Button Links</h2>
-
-		<h3>Hero Button</h3>	
+		<h2>Button Links</h2>	
 
 		<figure>	
+
+			<h3>Hero Button</h3>
 
 			<a href=" " class="link-button link-button-primary">Hero Link</a>
 
@@ -88,6 +88,22 @@
 
 		</figure>
 
+		<figure>
+
+			<h2>Modal Dialog</h2>
+
+			<button id="open-modal" type="button">Open Modal</button>
+
+			<dialog>
+
+				<h4>Text title</h4>
+
+				<p>Disrupt pitchfork godard leggings 3 wolf moon readymade adaptogen</p>
+
+			</dialog>
+
+		</figure>
+
 	</main>
 
 	<footer>
@@ -106,6 +122,26 @@
 		<p>&copy; 2019</p>
 
 	</footer>
+
+	<script>
+			document.addEventListener('DOMContentLoaded', function(){
+
+				const modal = document.querySelector('dialog');
+				const open = document.getElementById('open-modal');
+
+				open.addEventListener('click', () => {
+				modal.showModal();
+				});
+
+				modal.addEventListener('click', event => {
+				if (event.target === modal) {
+				modal.close('cancelled');
+				}
+				});
+
+			});
+	</script>
+
 </body>
 
 </html>

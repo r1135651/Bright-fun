@@ -1,3 +1,8 @@
+/*
+improve spinning icon
+clean up extra notes to remind me to complete this
+ */
+
 /*=========================================================
 
 Colors
@@ -103,7 +108,7 @@ a:visited {
 }
 
 .standout-text {
-	font-size: var(--size-feature)
+	font-size: var(--size-feature);
 	font-weight: bold;
 }
 
@@ -201,6 +206,7 @@ header {
 	background-color: var(--color-light-purple);	
 	color: var(--color-light-text);
 	padding: 1rem;
+	margin-bottom: 8rem;
 }
 
 header a {
@@ -252,6 +258,7 @@ footer {
 	background-color: var(--color-dark-purple);
 	color: var(--color-light-text);
 	padding: 2rem;
+	margin-top: 8rem;
 }
 
 /*=========================================================
@@ -342,6 +349,10 @@ Link Buttons
 	transition: all .5s ease;
 }
 
+.link-button-primary:visited, .link-button-secondary:visited {
+	color: var(--color-light-yellow);
+}
+
 /*=========================================================
 
 Accordions
@@ -350,12 +361,15 @@ Accordions
 
 details {
 	border-bottom: 1px solid var(--color-light-blue);
+	transition: all 1s ease-in;
 }
 
 summary {
 	font-size: var(--size-medium);
-	margin: 1rem 1rem;
+	margin: 1rem;
 	padding: 1rem;
+	border-bottom: 1px solid transparent;
+
 }
 
 details div {
@@ -363,7 +377,86 @@ details div {
 }
 
 details[open] {
-	border-color: var(--color-light-yellow);
+	margin-top: 4rem;
+	transition: all 1s ease-in;
+}
+
+summary::-webkit-details-marker {
+     background: url(images/star.svg);
+     color: transparent;
+     background-size: contain;
+     display: inline-block;
+     transition: all 1s ease-in;
+     transform-origin: 4rem 4rem;
+}
+
+details[open] summary::-webkit-details-marker {
+	transform: rotate(45deg) scale(1.5);
+	transition: all 1s ease-in;
+}
+
+summary:focus {
+	outline: none;
+	border-bottom: 2px solid #f56ab0; 
+}
+
+
+/*=========================================================
+
+Modal Dialog
+
+=========================================================*/
+
+dialog[open] {
+	animation: left-move-in .75s ease-out;
+	border-radius: .5em;
+	border-color: var(--color-purple);
+	text-align: center;
+}
+
+dialog[open]::backdrop {
+	animation: fade-in 1s ease;
+	animation-fill-mode: forwards;
+}
+
+dialog::backdrop {
+	background-color: #56346b;
+	background-image:
+	url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+	opacity: 0.5;
+
+}
+
+dialog h4 {
+	margin: 1rem;
+}
+
+@keyframes left-move-in {
+
+	0% {
+		opacity: 0;
+		transform: translatex(-40rem);
+	}
+
+	70% {
+		transform: translatex(1rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translatex(0);
+	}
+}
+
+@keyframes fade-in {
+	
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 0.5;
+	}
 }
 
 /*=========================================================
