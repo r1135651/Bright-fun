@@ -248,6 +248,10 @@ header .logo:visited {
 .logo::first-letter {
 	color: var(--color-light-blue);
 }
+
+.active-page {
+	font-weight: bold;
+}
 /*=========================================================
 
 Footer Component
@@ -457,6 +461,76 @@ dialog h4 {
 	100% {
 		opacity: 0.5;
 	}
+}
+
+/*=========================================================
+
+Forms
+
+=========================================================*/
+
+label, input, textarea, select {
+	display: block;
+}
+
+
+input[type=submit], button {
+	background-color: var(--color-light-purple);
+	border-radius: .5em;
+	box-shadow: 4px 4px var(--color-blue);
+	color: white;
+	display: inline-block;
+	margin: 1rem;
+	padding: .75rem;
+	text-transform: lowercase;
+	transition: all .5s ease;
+}
+
+input:not([type=submit]), textarea, select {
+	margin-bottom: 1rem;
+	border: 1px solid var(--color-light-blue);
+	padding: .5rem;
+}
+
+input:not([type=submit]), textarea {
+	min-width: 70%;
+}
+
+textarea {
+	min-height: 5rem;
+}
+
+label {
+	margin-bottom: .25rem;
+}
+
+.form-detail-text {
+	font-size: var(--size-tertiary);
+	font-style: italic;
+	margin-bottom: .25rem;
+	margin-top: -.25rem;
+}
+
+input[disabled], select[disabled], textarea[disabled] {
+	background-color: rgba(86,52,107,0.2);
+	border-color: var(--color-dark-purple);
+	cursor: not-allowed;
+}
+
+input.error, .error {
+	border-color: var(--color-pink);
+}
+
+.error-text {
+	color: var(--color-pink);
+	font-size: var(--size-xsmall);
+	margin-top: -.75rem;
+	text-transform: lowercase;
+}
+
+input:focus, select:focus, textarea:focus {
+	outline: none;
+	border: 2px solid #11A6CC; 
 }
 
 /*=========================================================

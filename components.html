@@ -19,7 +19,7 @@
 			<ul>
 				<li><a href="index.html">Home</a></li>	
 				<li><a href="style.html">Style</a></li>  
-				<li><a href="components.html">Components</a></li>  
+				<li><a href="components.html" class="active-page">Components</a></li>  
 				<li><a href="layout.html">Layout</a></li> 
 			</ul>
 		</nav>
@@ -29,11 +29,11 @@
 
 		<h1>Components</h1>
 
-		<h2>Button Links</h2>	
+		<h2>Button Links</h2>
+
+		<h3>Hero Button</h3>	
 
 		<figure>	
-
-			<h3>Hero Button</h3>
 
 			<a href=" " class="link-button link-button-primary">Hero Link</a>
 
@@ -88,21 +88,86 @@
 
 		</figure>
 
+		<h2>Form Inputs</h2>
+
 		<figure>
+		
+			<label for="first-name">Normal</label>
+			<input type="text" id="first-name" name="first-name" required placeholder="John">	
 
-			<h2>Modal Dialog</h2>
+			<label for="last-name">Error</label>
+			<input type="text" id="last-name" name="last-name" required class="error" placeholder="Smith">
 
-			<button id="open-modal" type="button">Open Modal</button>
+			<p class="error-text">Please complete this field</p>
 
-			<dialog>
+			<label for="last-name">Disabled</label>
+			<input type="text" id="last-name" name="last-name" required disabled placeholder="Smith">
 
-				<h4>Text title</h4>
+			<label for="event-type">Normal(optional)</label>
+			<select id="event-type" name="event-type">
+				
+				<option disable hidden selected>Please Select</option>
+				<option>Dinner Party</option>
+				<option>Corporate Event</option>
+				<option>Wedding</option>
+				<option>Baptism</option>
+				<option>Birthday</option>
+				<option>Other (Write in box below)
 
-				<p>Disrupt pitchfork godard leggings 3 wolf moon readymade adaptogen</p>
+			</select>	
 
-			</dialog>
+			<label for="event-type">Error</label>
+			<select id="event-type" name="event-type" class="error">
+				
+				<option disable hidden selected>Please Select</option>
+				<option>Dinner Party</option>
+				<option>Corporate Event</option>
+				<option>Wedding</option>
+				<option>Baptism</option>
+				<option>Birthday</option>
+				<option>Other (Write in box below)
+
+			</select>
+
+			<p class="error-text">Please complete this field</p>
+
+			<label for="event-type">Disabled</label>
+			<select id="event-type" name="event-type" disabled>
+				
+				<option disable hidden selected>Please Select</option>
+				<option>Dinner Party</option>
+				<option>Corporate Event</option>
+				<option>Wedding</option>
+				<option>Baptism</option>
+				<option>Birthday</option>
+				<option>Other (Write in box below)
+
+			</select>
+
+			<label for="extra-information">Normal</label>
+			<p class="form-detail-text">Write event details or special requests</p>
+			<textarea name="extra-information" id="extra-information" placeholder="In the evening of June 9th 2020, I need a boat party to celebrate my 30th birthday."></textarea>
+
+
+			<label for="extra-information">Error</label>
+			<p class="form-detail-text">Write event details or special requests</p>
+			<textarea name="extra-information" id="extra-information" placeholder="In the evening of June 9th 2020, I need a boat party to celebrate my 30th birthday." class="error"></textarea>
+
+			<p class="error-text">Please complete this field</p>
+
+
+			<label for="extra-information">Disabled</label>
+			<p class="form-detail-text">Write event details or special requests</p>
+			<textarea name="extra-information" id="extra-information" placeholder="In the evening of June 9th 2020, I need a boat party to celebrate my 30th birthday." disabled></textarea>
+				
+
+			<input type="submit">
+
+
+
 
 		</figure>
+
 
 	</main>
 
@@ -122,26 +187,6 @@
 		<p>&copy; 2019</p>
 
 	</footer>
-
-	<script>
-			document.addEventListener('DOMContentLoaded', function(){
-
-				const modal = document.querySelector('dialog');
-				const open = document.getElementById('open-modal');
-
-				open.addEventListener('click', () => {
-				modal.showModal();
-				});
-
-				modal.addEventListener('click', event => {
-				if (event.target === modal) {
-				modal.close('cancelled');
-				}
-				});
-
-			});
-	</script>
-
 </body>
 
 </html>
