@@ -369,15 +369,15 @@ details {
 }
 
 summary {
+	border-bottom: 1px solid transparent;
 	font-size: var(--size-medium);
 	margin: 1rem;
 	padding: 1rem;
-	border-bottom: 1px solid transparent;
-
 }
 
 details div {
 	padding: 1rem;
+	transition: all 1s ease-in;
 }
 
 details[open] {
@@ -489,11 +489,12 @@ input[type=submit], button {
 input:not([type=submit]), textarea, select {
 	margin-bottom: 1rem;
 	border: 1px solid var(--color-light-blue);
+	border-radius: .5em;
 	padding: .5rem;
 }
 
 input:not([type=submit]), textarea {
-	min-width: 70%;
+	min-width: 100%;
 }
 
 textarea {
@@ -530,7 +531,213 @@ input.error, .error {
 
 input:focus, select:focus, textarea:focus {
 	outline: none;
-	border: 2px solid #11A6CC; 
+	box-shadow: 0 0 0 2px #11A6CC;
+}
+
+input[type="submit"]:active  {
+	box-shadow: 4px 4px var(--color-mid-text) inset;
+	border: none;
+	transform: scale(.9);
+	transition: all .5s ease;
+}
+
+input[type="submit"]:hover, input[type="submit"]:focus {
+	background-color: var(--color-blue);
+	box-shadow: 4px 4px var(--color-light-purple);
+	color: var(--color-light-purple);
+}
+@media(min-width:500px) {
+
+	input:not([type=submit]), textarea {
+		min-width: 70%;
+	}
+
+}
+
+/*=========================================================
+
+Information Card
+
+=========================================================*/
+
+.card-info {
+	background-color: black;
+	color: white;
+	display: block;
+	margin-bottom: 2rem;
+	min-height: 430px;
+	overflow: hidden;
+	padding: 1rem 3rem;
+	position: relative;
+	z-index: 0;
+}
+
+.card-info:before {
+	bottom: 0;
+	content:"";
+	display: block;
+	background-image: url(images/concert-photo2.jpg);
+	background-position: center;
+	background-size: cover;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	transition: all .5s ease;
+	z-index: -1;
+}
+
+.card-info h2 {
+	color: white;
+	z-index: 1000;
+}
+
+.card-info h2:first-letter {
+	color: var(--color-pink)
+}
+
+.card-info p {
+	color: var(--color-light-blue);
+	opacity: 0;
+	transition: all .5s ease;
+	z-index: 1000;
+}
+
+.card-info:hover p, .card-info:focus  p {
+	opacity: 1;
+	transition: all .5s ease;
+}
+
+.card-info:hover:before, .card-info:focus:before {
+	opacity: .4;
+	transform: scale(1.05);
+	transition: all .5s ease;
+} 
+
+.card-info .tertiary-text {
+	bottom: 1rem;
+	text-align: right;
+	position: absolute;
+	right: 3rem;
+}
+
+/*=========================================================
+
+person card
+
+=========================================================*/
+
+.card-person {
+	background-color: black;
+	color: white;
+	display: block;
+	margin-bottom: 2rem;
+	min-height: 430px;
+	overflow: hidden;
+	padding: 1rem 3rem;
+	position: relative;
+	z-index: 0;
+}
+
+.card-person:before {
+	bottom: 0;
+	content:"";
+	display: block;
+	background-image: url(images/party-girl.jpg);
+	background-position: center;
+	background-size: cover;
+	left: 0;
+	opacity: .4;
+	position: absolute;
+	right: 0;
+	top: 0;
+	transition: all .5s ease;
+	z-index: -1;
+}
+
+.card-person h2 {
+	color: white;
+	z-index: 1000;
+}
+
+.card-person h2:first-letter {
+	color: var(--color-pink)
+}
+
+.card-person p {
+	color: var(--color-light-blue);
+	transition: all .5s ease;
+	z-index: 1000;
+}
+
+.card-person:hover:before, .card-person:focus:before {
+	opacity: 1;
+	transform: scale(1.05);
+	transition: all .5s ease;
+} 
+
+.card-person .tertiary-text {
+	display: block;
+}
+
+.card-person:hover .tertiary-text, .card-person:focus .tertiary-text {
+	opacity: 0;
+}
+
+.card-person blockquote {
+	color: white;
+	opacity: 0;
+	text-shadow: 2px 2px 0 black;
+}
+
+.card-person:hover blockquote, .card-person:focus blockquote {
+	opacity: 1;
+
+}
+
+/*=========================================================
+
+Notifications
+
+=========================================================*/
+
+.notifications-error {
+	background: rgba(245, 106, 176, .2);
+	border: 2px solid  var(--color-dark-pink);
+	padding: 1rem;
+}
+
+.notifications-error, .notifications-warning, .notifications-neutral, .notifications-success {
+	border-radius: .5em;
+	margin-bottom: 2rem;
+}
+
+.notifications-error h4, .notifications-warning h4, .notifications-neutral h4, .notifications-success h4 {
+	margin-bottom: 1rem;
+	margin-top: 0;
+}
+
+.notifications-error p, .notifications-warning p, .notifications-neutral p, .notifications-success p {
+	margin-left: 2rem;
+}
+
+.notifications-error-text, .notifications-warning-text, .notifications-neutral-text, .notifications-success-text {
+	display: flex;
+}
+
+.notifications-warning {
+	border: 2px solid  var(--color-dark-pink);
+	padding: 1rem;
+}
+
+.notifications-neutral {
+	border: 2px solid  var(--color-dark-blue);
+	padding: 1rem;
+}
+
+.notifications-success {
+	border: 2px solid  var(--color-light-blue);
+	padding: 1rem;
 }
 
 /*=========================================================
