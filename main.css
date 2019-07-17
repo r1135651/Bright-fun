@@ -636,6 +636,7 @@ person card
 	overflow: hidden;
 	padding: 1rem 3rem;
 	position: relative;
+	text-align: center;
 	z-index: 0;
 }
 
@@ -791,41 +792,22 @@ People Card Grid
 
 =========================================================*/
 
-@media (min-width: 550px) {
-	.grid {
+@media (min-width: 900px) {
+	.person-grid {
 		display: grid;
 		grid-gap: 1rem;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 
-	.card-info {
+	.card-person {
 		margin-bottom: 0;
 	}
 }
 
-@media (min-width: 1000px) {
-	.grid {
-		grid-template-columns: 1fr 1fr 1fr;
-	}
-}
-
-@media (min-width: 1250px) {
-	.grid {
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-	}
-}
-
 @media (min-width: 1500px) {
-	.grid {
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	}
-}
-
-@media (min-width: 1650px) {
-	.grid {
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	.person-grid {
 		margin: auto;
-		max-width: 1650px;
+		max-width: 1500px;
 
 	}
 }
