@@ -862,7 +862,7 @@ Card Grid
 
 @media (min-width: 1500px) {
 	.grid {
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		grid-template-columns: repeat( 5, 1fr );
 	}
 
 	.card-info:nth-child(1) {
@@ -941,7 +941,7 @@ Card Grid
 
 @media (min-width: 1650px) {
 	.grid {
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		grid-template-columns: repeat( 5, 1fr );
 		margin: auto;
 		max-width: 1650px;
 
