@@ -5,6 +5,18 @@ clean up extra notes to remind me to complete this
 
 /*=========================================================
 
+Reset
+
+=========================================================*/
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+
+/*=========================================================
+
 Colors
 
 =========================================================*/
@@ -164,6 +176,7 @@ blockquote cite {
 blockquote:before{
 	content: '❞';
 	font-size: var(--size-xlarge);
+	line-height: .55;
 	text-align: center;
 	display: block;	
 
@@ -172,6 +185,7 @@ blockquote:before{
 blockquote:after {
 	content: '❝';
 	font-size: var(--size-xlarge);
+	line-height: 1.15;
 	text-align: center;
 	display: block;
 
@@ -665,6 +679,10 @@ person card
 	color: var(--color-pink)
 }
 
+.card-person-body {
+	position: relative;
+}
+
 .card-person p {
 	color: var(--color-light-blue);
 	transition: all .5s ease;
@@ -687,8 +705,13 @@ person card
 
 .card-person blockquote {
 	color: white;
+	left: 0;
+	margin: 0;
 	opacity: 0;
-	text-shadow: 2px 2px 0 black;
+	position: absolute;
+	right: 0;
+	text-shadow: 2px 2px 4px black;
+	top: 0;
 }
 
 .card-person:hover blockquote, .card-person:focus blockquote {
@@ -757,11 +780,39 @@ Card Grid
 	.card-info {
 		margin-bottom: 0;
 	}
+
+	.card-info:nth-child(3) {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+
+	.card-info:nth-child(10) {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
 }
 
 @media (min-width: 1000px) {
 	.grid {
 		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	.card-info:nth-child(3) {
+		grid-column-end: 4;
+	}
+
+	.card-info:nth-child(10) {
+		grid-column-end: 4;
+	}
+
+	.card-info:nth-child(2) {
+		grid-column-start: 2;
+		grid-column-end: 4;
+	}
+
+	.card-info:nth-child(12) {
+		grid-column-start: 2;
+		grid-column-end: 4;
 	}
 }
 
@@ -769,12 +820,123 @@ Card Grid
 	.grid {
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
+
+	.card-info:nth-child(1) {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+
+	.card-info:nth-child(2) {
+		grid-column-start: 3;
+		grid-column-end: 5;
+	}
+
+	.card-info:nth-child(3) {
+		grid-column-end: 5;
+	}
+
+	.card-info:nth-child(8) {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+
+	.card-info:nth-child(9) {
+		grid-column-start: 3;
+		grid-column-end: 5;
+	}
+
+	.card-info:nth-child(10) {
+		grid-column-end: 5;
+	}
+
+	.card-info:nth-child(11) {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+
+	.card-info:nth-child(12) {
+		grid-column-start: 3;
+		grid-column-end: 5;
+	}
 }
 
 @media (min-width: 1500px) {
 	.grid {
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	}
+
+	.card-info:nth-child(1) {
+		grid-column-end: 2;
+	}
+
+	.card-info:nth-child(2) {
+		grid-column-start: 2;
+		grid-column-end: 3;
+	}
+
+	.card-info:nth-child(4) {
+		grid-column-start: 3;
+		grid-column-end: 4;
+		grid-row-start: 1;
+		grid-row-end: 2;
+	}
+
+	.card-info:nth-child(5) {
+		grid-column-start: 4;
+		grid-column-end: 5;
+		grid-row-start: 1;
+		grid-row-end: 2;
+	}
+
+	.card-info:nth-child(6) {
+		grid-column-start: 5;
+		grid-column-end: 6;
+		grid-row-start: 1;
+		grid-row-end: 2;
+	}
+
+	.card-info:nth-child(3) {
+		grid-column-end: 6;
+	}
+
+	.card-info:nth-child(7) {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 3;
+		grid-row-end: 4;
+	}
+
+	.card-info:nth-child(8) {
+		grid-column-start: 2;
+		grid-column-end: 3;
+		grid-row-start: 3;
+		grid-row-end: 4;
+	}
+
+	.card-info:nth-child(9) {
+		grid-column-end: 4;
+		grid-row-start: 3;
+		grid-row-end: 4;
+	}
+
+	.card-info:nth-child(10) {
+		grid-column-end: 6;
+	}
+
+	.card-info:nth-child(11) {
+		grid-column-start: 4;
+		grid-column-end: 5;
+		grid-row-start: 3;
+		grid-row-end: 4;
+	}
+
+	.card-info:nth-child(12) {
+		grid-column-start: 5;
+		grid-column-end: 6;
+		grid-row-start: 3;
+		grid-row-end: 4;
+	}
+
 }
 
 @media (min-width: 1650px) {
@@ -792,17 +954,22 @@ People Card Grid
 
 =========================================================*/
 
-@media (min-width: 900px) {
+@media (min-width: 850px) {
 	.person-grid {
 		display: grid;
 		grid-gap: 1rem;
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr;
 	}
 
 	.card-person {
 		margin-bottom: 0;
 	}
 }
+
+@media (min-width: 1300px) {
+	.person-grid {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
 
 @media (min-width: 1500px) {
 	.person-grid {
