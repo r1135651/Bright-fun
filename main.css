@@ -9,6 +9,10 @@ Reset
 
 =========================================================*/
 
+* {
+	transition: all .5s;
+}
+
 img {
 	max-width: 100%;
 	display: block;
@@ -590,7 +594,7 @@ Information Card
 	bottom: 0;
 	content:"";
 	display: block;
-	background-image: url(images/concert-photo2.jpg);
+	background-image: url(images/Concert-photo2.jpg);
 	background-position: center;
 	background-size: cover;
 	left: 0;
